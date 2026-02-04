@@ -101,6 +101,9 @@
             font-family: 'Georgia', serif;
             color: #2d3748;
             overflow-x: hidden;
+        }
+
+        .page-wrapper {
             max-width: 1440px;
             margin: 0 auto;
             position: relative;
@@ -110,14 +113,14 @@
         nav {
             position: fixed;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1440px;
+            left: 0;
+            right: 0;
             background: linear-gradient(135deg, var(--nav-gradient-1) 0%, var(--nav-gradient-2) 100%);
             padding: 1.5rem 2rem;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
         }
 
         nav ul {
@@ -126,6 +129,10 @@
             justify-content: center;
             gap: 2.5rem;
             flex-wrap: wrap;
+            max-width: 1440px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         nav a {
@@ -145,13 +152,25 @@
         /* Section Base Styles */
         section {
             min-height: 100vh;
-            padding: 6rem 3rem 4rem;
+            padding: 6rem 0 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             position: relative;
             width: 100%;
+        }
+
+        section > * {
+            max-width: 1440px;
+            width: 100%;
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        section h2 {
+            padding-left: 3rem;
+            padding-right: 3rem;
         }
 
         h1 {
@@ -186,6 +205,7 @@
             right: 0;
             bottom: 0;
             background: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
         }
 
         .home-content {
@@ -193,7 +213,7 @@
             z-index: 1;
             text-align: center;
             background: white;
-            padding: 3rem 4rem;
+            padding: 3rem 4rem !important;
             border-radius: 20px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
             max-width: 900px;
@@ -257,7 +277,8 @@
             gap: 2.5rem;
             max-width: 1200px;
             width: 100%;
-            padding: 0 1rem;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
         }
 
         .project-card {
@@ -301,7 +322,8 @@
         .experience-container {
             max-width: 1000px;
             width: 100%;
-            padding: 0 1rem;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
         }
 
         .experience-item {
@@ -351,7 +373,8 @@
             flex-wrap: wrap;
             justify-content: center;
             max-width: 1000px;
-            padding: 0 1rem;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
         }
 
         .social-link {
@@ -388,7 +411,7 @@
 
         .contact-form {
             background: white;
-            padding: 3rem;
+            padding: 3rem !important;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
             max-width: 700px;
@@ -449,16 +472,14 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            body {
-                max-width: 100%;
+            section > * {
+                padding-left: 2rem;
+                padding-right: 2rem;
             }
 
-            nav {
-                max-width: 100%;
-            }
-
-            section {
-                padding: 6rem 2rem 4rem;
+            section h2 {
+                padding-left: 2rem;
+                padding-right: 2rem;
             }
         }
 
@@ -480,17 +501,28 @@
             }
 
             .home-content {
-                padding: 2rem 2.5rem;
+                padding: 2rem 2.5rem !important;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
-                padding: 0;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
 
             .theme-toggle {
                 top: 1rem;
                 right: 1rem;
+            }
+
+            section > * {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            section h2 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
             }
         }
     </style>
@@ -637,4 +669,3 @@
     </script>
 </body>
 </html>
-
